@@ -136,6 +136,7 @@ h2,
 h3,
 .h3 {
   @include small-caps-heading();
+  @include rfs(24px);
 }
 
 // .download-nav {

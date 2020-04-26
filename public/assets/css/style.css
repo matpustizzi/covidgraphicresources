@@ -4833,7 +4833,16 @@ h3,
 .h3 {
   font-variant: small-caps;
   font-weight: normal;
-  padding-top: 0.4rem; }
+  padding-top: 0.4rem;
+  font-size: 1.5rem; }
+  @media (max-width: 1200px) {
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3 {
+      font-size: calc(1.275rem + 0.3vw) ; } }
 
 .carousel-item {
   text-align: center; }
