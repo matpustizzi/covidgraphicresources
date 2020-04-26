@@ -1,0 +1,27 @@
+header.bg-primary
+    if menuContent
+        nav.navbar.mr-auto.ml-auto.bg-prima
+                a.navbar-brand(href='./')
+                    img(src="/assets/images/cssc-logo.svg", alt=siteName)
+                ul.nav
+                    if document && document.alternate_languages.length
+                        li.nav-item.dropdown 
+                            - var currentLang = document.lang.split('-')[0]
+                            a.nav-link.dropdown-toggle(
+                                href="#" 
+                                id="navbarDropdown" 
+                                role="button" 
+                                data-toggle="dropdown" 
+                                aria-haspopup="true"
+                                aria-expanded="false")!= isoLangs && isoLangs[currentLang] ? isoLangs[currentLang].nativeName : 'Language'
+                            div.dropdown-menu
+                                each altlang in document.alternate_languages
+                                    a.dropdown-item(href=ctx.linkResolver(altlang))
+                                        - var code = altlang.lang.split('-')[0]
+                                        != isoLangs && isoLangs[code] ? isoLangs[code].nativeName : code
+                    each menuLink in menuContent.data.nav_items
+                        - var href = prismicDom.Link.url(menuLink.link, ctx.linkResolver)
+                        li.nav-item(class={ "active" : currentUrl === href })
+                            a.nav-link(
+                                href= href
+                                )!= prismicDom.RichText.asText(menuLink.display_name)

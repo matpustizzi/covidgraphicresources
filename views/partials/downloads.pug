@@ -1,0 +1,32 @@
+
+
+//- pre
+//-     != JSON.stringify(slice,null,' ')
+
+- if(slice.items.length)
+    .nav.nav-tabs.download-nav(role="tablist")
+        for group, i in slice.items
+            - var {title} = group.download_tab.data
+            .nav-item
+                a.nav-link(
+                    class=`${ i === 0 ? 'active' : ''}`
+                    id=`downloads-tab-${ i }`
+                    data-toggle="tab"
+                    href=`#downloads-${ i }`
+                    aria-controls=`downloads-${ i }`
+                    aria-selected=`${ i === 0 }`
+                )!= title
+    .tab-content
+        for group, i in slice.items
+            - var {title,preview_images,download_file,download_link_text} = group.download_tab.data
+                .tab-pane(
+                    class=`${ i === 0 ? 'active show' : ''}`
+                    id=`downloads-${ i }`
+                    role="tabpanel"
+                    aria-labeledby=`downloads-tab-${ i }`
+                )
+                    //- h1!= title
+                    a.btn.btn-primary(href=download_file.url)!= download_link_text || 'Download'
+                    for image in preview_images
+                        img(src!=image.image.url)
+                        

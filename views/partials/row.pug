@@ -1,0 +1,9 @@
+- if(slice.items)
+    .row.mb-md-5
+        for item in slice.items
+            - var column = item.column
+            if(column)
+                - var columnClass = 12 / slice.items.length
+                .col-12.d-flex.align-items-center.mb-md-3(class= `col-md-${ columnClass }`)
+                    div
+                        != prismicDom.RichText.asHtml(column, ctx.linkResolver)

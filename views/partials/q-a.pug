@@ -1,0 +1,19 @@
+
+- var  { question1, answer } = slice.primary
+
+.row.mb-md-4.qa-section
+  - if(question1)
+    .col-12
+      h1.qa-section__group
+        div
+          .qa-section__label!= global.data.question_label
+        div.qa-section__text
+          != prismicDom.RichText.asHtml(question1, ctx.linkResolver)
+
+  - if(answer)
+    .col-12
+      .qa-section__group
+        div
+          .qa-section__label.qa-section__label--answer!= global.data.answer_label
+        div.qa-section__text
+          != prismicDom.RichText.asHtml(answer, ctx.linkResolver)

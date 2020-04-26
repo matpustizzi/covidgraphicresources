@@ -1,0 +1,23 @@
+extends ./layout.pug
+
+block prepend body 
+  body
+
+  include ./partials/header.pug
+
+  div.container-fluid.mt-3
+
+    for slice in document.data.body
+      //- pre 
+      //-   != JSON.stringify(slice, null, ' ')
+      case slice.slice_type
+        when 'q_a'
+          include ./partials/q-a.pug
+        when 'columns'
+          include ./partials/row.pug
+        when 'downloads'
+          include ./partials/downloads.pug
+
+block prepend footer
+  .container-fluid
+    img(src="/assets/images/cssc-logo-gray.svg", alt=siteName)
