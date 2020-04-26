@@ -125,7 +125,7 @@ app.get(
 
     if (document) {
       res.render("page", { document });
-      console.log(document);
+      //console.log(document);
     } else {
       res.status(404).render("error-handlers/notfound");
     }
