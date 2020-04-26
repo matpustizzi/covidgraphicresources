@@ -4,7 +4,7 @@
 //-     != JSON.stringify(slice,null,' ')
 
 - if(slice.items.length)
-    .nav.nav-tabs.download-nav(role="tablist")
+    .nav.nav-tabs.download-nav.mb-5(role="tablist")
         for group, i in slice.items
             - var {title} = group.download_tab.data
             .nav-item
@@ -18,15 +18,46 @@
                 )!= title
     .tab-content
         for group, i in slice.items
-            - var {title,preview_images,download_file,download_link_text} = group.download_tab.data
+            - var {title,preview_images,download_files,download_link_text} = group.download_tab.data
                 .tab-pane(
                     class=`${ i === 0 ? 'active show' : ''}`
                     id=`downloads-${ i }`
                     role="tabpanel"
                     aria-labeledby=`downloads-tab-${ i }`
                 )
-                    //- h1!= title
-                    a.btn.btn-primary(href=download_file.url)!= download_link_text || 'Download'
-                    for image in preview_images
-                        img(src!=image.image.url)
-                        
+
+                    - var id = `download-slider-${ i }`;
+                    .carousel.mb-5.slide(
+                        id=id 
+                        data-ride='carousel')
+                        ol.carousel-indicators
+                            for image,i in preview_images
+                                li(
+                                    class=`${ i === 0 ? 'active' : '' }` 
+                                    data-target=id 
+                                    data-slide-to=i)
+                        .carousel-inner
+                            for image,i in preview_images
+                                .carousel-item(class=`${ i === 0 ? 'active' : '' }` )
+                                    img(src!=image.image.url)
+                            
+                        a.carousel-control-prev(href=id role='button' data-slide='prev')
+                            span.carousel-control-prev-icon(aria-hidden='true')
+                            span.sr-only Previous
+                        a.carousel-control-next(href=id role='button' data-slide='next')
+                            span.carousel-control-next-icon(aria-hidden='true')
+                            span.sr-only Next
+                    
+                    .text-center
+                        .dropdown.btn-group
+                            button.btn.btn-primary.btn-lg.dropdown-toggle(
+                                    type="button"
+                                    id=`download-media-${ i }`
+                                    data-toggle="dropdown" 
+                                    aria-haspopup="true" 
+                                    aria-expanded="false"
+                                )!= download_link_text || 'Download'
+                            .dropdown-menu(aria-labelledby=`download-media-${ i }`)
+                                for item in download_files
+                                    a.dropdown-item(href=item.file.url )!= item.language
+

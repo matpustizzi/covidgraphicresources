@@ -119,7 +119,7 @@ app.get(
         "download_group.title",
         "download_group.preview_images",
         "download_group.download_link_text",
-        "download_group.download_file",
+        "download_group.download_files",
       ],
     });
 
