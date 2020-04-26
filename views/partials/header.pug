@@ -25,3 +25,11 @@ header.bg-primary
                             a.nav-link(
                                 href= href
                                 )!= prismicDom.RichText.asText(menuLink.display_name)
+                    
+                    if(menuContent.data.social_nav_items)
+                        each socialLink in menuContent.data.social_nav_items
+                            - var href = prismicDom.Link.url(socialLink.link, ctx.linkResolver)
+                            li.nav-item.nav-item--social
+                                a.nav-link(href= href)
+                                    img(src= socialLink.social_icon.url)
+                        

@@ -4766,6 +4766,8 @@ body {
     font-size: 1rem; }
   .nav-item .navbar.active .nav-link {
     color: white; }
+  .navbar .nav-item--social img {
+    max-width: 20px; }
   @media (max-width: 575.98px) {
     .navbar .nav {
       justify-content: center; } }
@@ -4810,8 +4812,8 @@ body {
 .qa-section__text {
   font-variant: small-caps;
   font-weight: normal;
-  padding-top: 0.4rem;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  padding-top: 0.4rem; }
   @media (max-width: 1200px) {
     .qa-section__text {
       font-size: calc(1.275rem + 0.3vw) ; } }
@@ -4825,24 +4827,34 @@ body {
     .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
       padding: 3rem; } }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3 {
+h1, .h1 {
   font-variant: small-caps;
   font-weight: normal;
-  padding-top: 0.4rem;
   font-size: 1.5rem; }
   @media (max-width: 1200px) {
-    h1,
-    .h1,
-    h2,
-    .h2,
-    h3,
-    .h3 {
+    h1, .h1 {
       font-size: calc(1.275rem + 0.3vw) ; } }
+
+h2, .h2 {
+  font-variant: small-caps;
+  font-weight: normal;
+  font-size: 1.5rem;
+  color: #b2b2b2; }
+  @media (max-width: 1200px) {
+    h2, .h2 {
+      font-size: calc(1.275rem + 0.3vw) ; } }
+
+h3, .h3 {
+  text-transform: none;
+  font-variant: normal;
+  color: #b2b2b2;
+  font-size: 1rem; }
+
+h4, .h4 {
+  text-transform: none;
+  font-variant: normal;
+  color: #b2b2b2;
+  font-size: 0.875rem; }
 
 .carousel-item {
   text-align: center; }
@@ -4854,3 +4866,6 @@ h3,
     @media (min-width: 768px) {
       .carousel-item img {
         height: 550px; } }
+
+.footer-image {
+  opacity: 0.3; }
