@@ -7,7 +7,6 @@ const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const errorHandler = require("errorhandler");
 const path = require("path");
-const timeout = require("connect-timeout");
 
 module.exports = (() => {
   const app = express();
@@ -23,12 +22,6 @@ module.exports = (() => {
   app.use(express.static(path.join(__dirname, "public")));
 
   app.use(errorHandler());
-  app.use(timeout("5s"));
-  app.use(haltOnTimedout);
-
-  function haltOnTimedout(req, res, next) {
-    if (!req.timedout) next();
-  }
 
   return app;
 })();
