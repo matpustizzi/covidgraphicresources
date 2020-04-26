@@ -8,7 +8,7 @@ html(lang=`${ document && document.lang ? document.lang : 'en-us'}`)
 
     // Required for Previews and Experiments
     script
-      = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
+      = ctx?"window.prismic = { endpoint: '" + ctx.apiEndpoint + "' };":""
     script(src="//static.cdn.prismic.io/prismic.min.js")
 
   script(type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.27/dist/bootstrap-native-v4.min.js")
