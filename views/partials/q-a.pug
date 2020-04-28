@@ -4,16 +4,14 @@
 .row.mb-md-4.qa-section
   - if(question1)
     .col-12
-      h1.qa-section__group
+      h1.qa-section__group.qa-section__group--question
         div
-          .qa-section__label!= global.data.question_label
+          .qa-section__label ?
         div.qa-section__text
           != prismicDom.RichText.asHtml(question1, ctx.linkResolver)
 
   - if(answer)
     .col-12
-      .qa-section__group
-        div
-          .qa-section__label.qa-section__label--answer!= global.data.answer_label
+      .qa-section__group.qa-section__group--answer
         div.qa-section__text
           != prismicDom.RichText.asHtml(answer, ctx.linkResolver)

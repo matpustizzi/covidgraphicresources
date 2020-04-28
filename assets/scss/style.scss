@@ -1,3 +1,4 @@
+//@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
 @import "variables";
 
 // Required
@@ -98,12 +99,25 @@ body {
   &__group {
     display: flex;
     margin-left: -1.5rem;
+    &--question {
+      font-weight: bold !important;
+      .qa-section__text {
+        @include rfs(30px);
+        font-weight: bold !important;
+        padding-top: 0.4rem;
+      }
+    }
+    &--answer {
+      .qa-section__text {
+        margin-left: 3.7rem;
+      }
+    }
   }
   &__label {
     border-radius: 50%;
-    background-color: $primary;
+    background-color: #ff19b3;
     color: white;
-    @include rfs(24px);
+    @include rfs(30px);
     width: 3rem;
     height: 3rem;
     margin-right: 0.7rem;
@@ -118,7 +132,6 @@ body {
   &__text {
     @include small-caps-heading();
     @include rfs(24px);
-    padding-top: 0.4rem;
   }
 }
 
@@ -135,26 +148,33 @@ body {
 h1,
 .h1 {
   @include small-caps-heading();
-  @include rfs(24px);
+  @include rfs(30px);
+  font-weight: bold;
 }
 
 h2,
 .h2 {
   @include small-caps-heading();
   @include rfs(24px);
-  color: #b2b2b2;
 }
 
 h3,
 .h3 {
+  @include small-caps-heading();
+  @include rfs(24px);
+  color: #b2b2b2;
+}
+
+h4,
+.h4 {
   text-transform: none;
   font-variant: normal;
   color: #b2b2b2;
   @include rfs(16px);
 }
 
-h4,
-.h4 {
+h5,
+.h5 {
   text-transform: none;
   font-variant: normal;
   color: #b2b2b2;
