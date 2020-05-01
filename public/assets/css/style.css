@@ -4785,7 +4785,8 @@ body {
       display: flex;
       flex-wrap: wrap; }
   .navbar .dropdown-item {
-    width: auto; }
+    width: auto;
+    text-transform: uppercase; }
 
 .qa-section__group {
   display: flex;
@@ -4835,7 +4836,7 @@ body {
   margin-right: auto; }
   @media (min-width: 768px) {
     .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
-      padding: 3rem; } }
+      padding: 7rem; } }
 
 h1, .h1 {
   font-variant: small-caps;
@@ -4858,7 +4859,7 @@ h3, .h3 {
   font-variant: small-caps;
   font-weight: normal;
   font-size: 1.5rem;
-  color: #b2b2b2; }
+  color: #666; }
   @media (max-width: 1200px) {
     h3, .h3 {
       font-size: calc(1.275rem + 0.3vw) ; } }
@@ -4866,14 +4867,39 @@ h3, .h3 {
 h4, .h4 {
   text-transform: none;
   font-variant: normal;
-  color: #b2b2b2;
+  color: #666;
   font-size: 1rem; }
 
 h5, .h5 {
   text-transform: none;
   font-variant: normal;
-  color: #b2b2b2;
+  color: #666;
   font-size: 0.875rem; }
+
+h6, .h6 {
+  font-variant: small-caps;
+  font-weight: normal;
+  font-size: 2.1875rem;
+  font-weight: bold;
+  color: #ff19b3; }
+  @media (max-width: 1200px) {
+    h6, .h6 {
+      font-size: calc(1.34375rem + 1.125vw) ; } }
+
+.btn-white {
+  color: white !important; }
+
+.download-select .dropdown-menu {
+  right: 0;
+  text-align: center; }
+
+.download-nav .nav-link {
+  color: #666; }
+  .download-nav .nav-link.active {
+    color: #fbb133; }
+
+.dropdown-item {
+  color: #666; }
 
 .carousel-item {
   text-align: center; }
@@ -4887,4 +4913,4 @@ h5, .h5 {
         height: 550px; } }
 
 .footer-image {
-  opacity: 0.3; }
+  opacity: 0.6; }

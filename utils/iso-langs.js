@@ -117,7 +117,7 @@ const isoLangs = {
   },
   zh: {
     name: "Chinese",
-    nativeName: "中文 (Zhōngwén), 汉语, 漢語",
+    nativeName: "普通话",
   },
   cv: {
     name: "Chuvash",
@@ -185,7 +185,7 @@ const isoLangs = {
   },
   fr: {
     name: "French",
-    nativeName: "français, langue française",
+    nativeName: "français",
   },
   ff: {
     name: "Fula; Fulah; Pulaar; Pular",
@@ -285,7 +285,7 @@ const isoLangs = {
   },
   ja: {
     name: "Japanese",
-    nativeName: "日本語 (にほんご／にっぽんご)",
+    nativeName: "日本語",
   },
   jv: {
     name: "Javanese",
@@ -589,8 +589,8 @@ const isoLangs = {
     nativeName: "Sesotho",
   },
   es: {
-    name: "Spanish; Castilian",
-    nativeName: "español, castellano",
+    name: "Spanish",
+    nativeName: "español",
   },
   su: {
     name: "Sundanese",
