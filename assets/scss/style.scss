@@ -75,6 +75,8 @@ body {
   margin-right: auto;
   @include media-breakpoint-down(sm) {
     justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
   }
   &-brand {
     max-width: 200px;
