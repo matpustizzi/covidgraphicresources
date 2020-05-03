@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Graphik";
+  src: url("../fonts/Graphik-BoldItalic.woff2") format("woff2"), url("../fonts/Graphik-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Graphik";
+  src: url("../fonts/Graphik-Bold.woff2") format("woff2"), url("../fonts/Graphik-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Graphik";
+  src: url("../fonts/Graphik-Regular.woff2") format("woff2"), url("../fonts/Graphik-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Graphik";
+  src: url("../fonts/Graphik-RegularItalic.woff2") format("woff2"), url("../fonts/Graphik-RegularItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
 *,
 *::before,
 *::after {
@@ -14,7 +38,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Graphik", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2120,7 +2144,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #666;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -2152,7 +2176,7 @@ input[type="button"].btn-block {
 .dropdown-item-text {
   display: block;
   padding: 0.25rem 1.5rem;
-  color: #212529; }
+  color: #666; }
 
 .carousel {
   position: relative; }
@@ -4787,6 +4811,9 @@ body {
   .navbar .dropdown-item {
     width: auto;
     text-transform: uppercase; }
+    .navbar .dropdown-item:hover,
+    .navbar .dropdown-item :focus {
+      color: #fbb133; }
 
 .qa-section__group {
   display: flex;
@@ -4838,6 +4865,20 @@ body {
     .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
       padding: 7rem; } }
 
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-bottom: 1rem; }
+
 h1, .h1 {
   font-variant: small-caps;
   font-weight: normal;
@@ -4881,7 +4922,8 @@ h6, .h6 {
   font-weight: normal;
   font-size: 2.1875rem;
   font-weight: bold;
-  color: #ff19b3; }
+  color: #ff19b3;
+  margin-left: 2.15rem; }
   @media (max-width: 1200px) {
     h6, .h6 {
       font-size: calc(1.34375rem + 1.125vw) ; } }
@@ -4893,10 +4935,21 @@ h6, .h6 {
   right: 0;
   text-align: center; }
 
-.download-nav .nav-link {
-  color: #666; }
-  .download-nav .nav-link.active {
-    color: #fbb133; }
+.download-nav {
+  margin-left: -25px;
+  margin-right: -25px; }
+  @media (min-width: 768px) {
+    .download-nav {
+      margin-left: 0;
+      margin-right: 0; } }
+  .download-nav .nav-link {
+    color: #666;
+    font-size: 0.9375rem; }
+    @media (min-width: 768px) {
+      .download-nav .nav-link {
+        font-size: 1rem; } }
+    .download-nav .nav-link.active {
+      color: #fbb133; }
 
 .dropdown-item {
   color: #666; }
@@ -4914,3 +4967,45 @@ h6, .h6 {
 
 .footer-image {
   opacity: 0.6; }
+
+.tab-content {
+  min-height: 450px;
+  position: relative; }
+  @media (min-width: 768px) {
+    .tab-content {
+      min-height: 700px; } }
+  .tab-content .carousel-indicators {
+    display: none; }
+  .tab-content > .tab-pane {
+    display: block;
+    position: absolute;
+    background-color: white; }
+    .tab-content > .tab-pane.active {
+      z-index: 5; }
+      .tab-content > .tab-pane.active .carousel-indicators {
+        display: flex; }
+  .tab-content > .active {
+    display: block; }
+  .tab-content .dropdown-toggle {
+    white-space: normal; }
+
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; }
+
+.headroom--pinned {
+  transform: translateY(0%); }
+
+.headroom--unpinned {
+  transform: translateY(-100%); }
+
+body {
+  padding-top: 108px; }
+  @media (min-width: 768px) {
+    body {
+      padding-top: 68px; } }
