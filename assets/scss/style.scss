@@ -125,8 +125,10 @@ body {
     width: auto;
     text-transform: uppercase;
     &:hover,
-    :focus {
+    &:focus,
+    &:active {
       color: $primary;
+      background-color: rgba(204, 204, 204, 0.4);
     }
   }
 }

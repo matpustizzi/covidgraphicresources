@@ -4811,9 +4811,9 @@ body {
   .navbar .dropdown-item {
     width: auto;
     text-transform: uppercase; }
-    .navbar .dropdown-item:hover,
-    .navbar .dropdown-item :focus {
-      color: #fbb133; }
+    .navbar .dropdown-item:hover, .navbar .dropdown-item:focus, .navbar .dropdown-item:active {
+      color: #fbb133;
+      background-color: rgba(204, 204, 204, 0.4); }
 
 .qa-section__group {
   display: flex;
