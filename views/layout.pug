@@ -27,7 +27,13 @@ html(lang=`${ document && document.lang ? document.lang : 'en-us'}`)
   script(type="text/javascript" src="/assets/js/headroom.js")
   script.
     var headroom = new Headroom(document.querySelector('.js-headroom'), {
-      "offset": 205,
       "tolerance": 5
     });
     headroom.init();
+script(async src="https://www.googletagmanager.com/gtag/js?id=UA-164499962-1")
+script.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-164499962-1');
+
