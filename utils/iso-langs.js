@@ -117,7 +117,7 @@ const isoLangs = {
   },
   zh: {
     name: "Chinese",
-    nativeName: "普通话",
+    nativeName: "中文",
   },
   cv: {
     name: "Chuvash",
