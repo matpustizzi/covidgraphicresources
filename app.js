@@ -17,6 +17,7 @@ app.listen(port, () => {
 
 // Root path redirects to default language
 app.get("/", (req, res) => {
+  console.log("/+ redirect to root lang");
   res.redirect(defaultLang);
 });
 
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 app.get(
   "*",
   asyncHandler(async (req, res, next) => {
+    console.log("*");
     const api = await prismic.api(prismicConfig.apiEndpoint, {
       req,
       accessToken: prismicConfig.accessToken,
@@ -42,6 +44,7 @@ app.get(
 app.get(
   "/preview",
   asyncHandler(async (req, res) => {
+    console.log('"/preview"');
     const token = req.query.token;
     if (token) {
       const url = await req.prismic.api.previewSession(
@@ -60,6 +63,7 @@ app.get(
 app.get(
   ["/:lang", "/:lang/*"],
   asyncHandler(async (req, res, next) => {
+    console.log('"/:lang","/:lang/*"');
     const lang = req.params.lang;
 
     // Set locals variables in res to be used in view templates
@@ -96,6 +100,7 @@ app.get(
 app.get(
   "/:lang/",
   asyncHandler(async (req, res) => {
+    console.log("/:lang/ (homepage route)");
     const lang = req.params.lang;
     const document = await req.prismic.api.getByUID("page", "home", { lang });
     if (document) {
@@ -110,6 +115,7 @@ app.get(
 app.get(
   "/:lang/:uid",
   asyncHandler(async (req, res) => {
+    console.log("/:lang/:uid");
     const lang = req.params.lang;
     const uid = req.params.uid;
 
@@ -134,6 +140,7 @@ app.get(
 
 // 404 route for anything else
 app.get("*", (req, res) => {
+  console.log("*");
   res.status(404).render("error-handlers/notfound");
 });
 
