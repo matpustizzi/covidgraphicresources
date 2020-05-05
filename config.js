@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const errorHandler = require("errorhandler");
 const path = require("path");
+const timeout = require("express-timeout-handler");
 
 module.exports = (() => {
   const app = express();
@@ -15,6 +16,7 @@ module.exports = (() => {
   app.set("port", process.env.PORT || 3000);
   app.set("views", path.join(__dirname, "views"));
   app.set("view engine", "pug");
+  app.use(timeout.handler);
   app.use(logger("dev"));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
