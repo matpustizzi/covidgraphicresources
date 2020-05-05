@@ -6,6 +6,6 @@
             //- console.log(column.length)
             if(column)
                 - var widthClass = 12 / slice.items.length
-                .col-12.d-flex.align-items-center.mb-md-3(class=`col-md-${ widthClass }${ imageInColumn ? ` order-sm-last order-md-0` : '' }`)
+                .col-12.d-flex.align-items-center.mb-md-3(class=`col-md-${ widthClass }${ imageInColumn ? ` order-last order-md-0` : '' }`)
                     div
                         != prismicDom.RichText.asHtml(column, ctx.linkResolver)
