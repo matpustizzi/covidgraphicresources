@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const errorHandler = require("errorhandler");
 const path = require("path");
-const timeout = require("express-timeout-handler");
+//const timeout = require("express-timeout-handler");
 
 module.exports = (() => {
   const app = express();
@@ -22,6 +22,6 @@ module.exports = (() => {
   app.use(methodOverride());
   app.use(express.static(path.join(__dirname, "public")));
   app.use(errorHandler());
-  app.use(timeout.handler);
+  //app.use(timeout.handler);
   return app;
 })();
