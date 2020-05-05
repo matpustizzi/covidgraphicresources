@@ -149,6 +149,11 @@ body {
 .qa-section {
   &__group {
     display: flex;
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
     //margin-left: -1.5rem;
     &--question {
       font-weight: bold !important;
@@ -160,7 +165,9 @@ body {
     }
     &--answer {
       .qa-section__text {
-        margin-left: 3.7rem;
+        @include media-breakpoint-up(md) {
+          margin-left: 3.7rem;
+        }
       }
     }
   }
@@ -268,15 +275,30 @@ h6,
 }
 
 .download-nav {
-  margin-left: -25px;
-  margin-right: -25px;
+  margin-left: -10px;
+  margin-right: -10px;
   @include media-breakpoint-up(md) {
     margin-left: 0;
     margin-right: 0;
   }
+  .nav-item {
+    @include media-breakpoint-down(md) {
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
   .nav-link {
     color: $main-gray;
-    @include rfs(15px);
+    @include rfs(14px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    @include media-breakpoint-down(md) {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
     @include media-breakpoint-up(md) {
       @include rfs(16px);
     }
@@ -303,6 +325,7 @@ h6,
 }
 
 .footer-image {
+  margin-top: 50px;
   opacity: 0.6;
 }
 
